@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test
+spec:
+  destination:
+    name: in-cluster
+    namespace: test
+    server: ''
+  source:
+    path: ''
+    repoURL: 'oci://registry.dostavista.net'
+    targetRevision: v0.1.0
+    chart: test
+  project: default
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:     # Sync options which modifies sync behavior
+      - CreateNamespace=true
