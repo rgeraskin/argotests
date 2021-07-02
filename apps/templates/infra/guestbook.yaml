@@ -16,7 +16,8 @@ spec:
     repoURL: https://github.com/argoproj/argocd-example-apps
     targetRevision: HEAD
   syncPolicy:
-    automated: {}
+    automated:
+      selfHeal: true
     syncOptions:     # Sync options which modifies sync behavior
       - CreateNamespace=true
 {{- end }}
