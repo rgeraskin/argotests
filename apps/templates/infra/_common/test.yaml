@@ -4,12 +4,12 @@ metadata:
   name: test
 spec:
   destination:
-    name: in-cluster
+    name: yc-test-thunder
     namespace: test
     server: ''
   source:
     path: ''
-    repoURL: 'oci://registry.dostavista.net'
+    repoURL: 'registry.gitlab.com/roman-geraskin/test1'
     targetRevision: v0.1.0
     chart: test
   project: default
