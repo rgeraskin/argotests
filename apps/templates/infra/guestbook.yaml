@@ -1,0 +1,23 @@
+{{- range $cluster := .Values.clusters }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: guestbook
+    name: {{ $cluster }}
+  project: default
+  source:
+    path: guestbook
+    repoURL: https://github.com/rgeraskin/argocd-example-apps
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:     # Sync options which modifies sync behavior
+      - CreateNamespace=true
+{{- end }}
