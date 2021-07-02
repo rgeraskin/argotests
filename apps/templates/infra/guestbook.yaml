@@ -17,4 +17,6 @@ spec:
     targetRevision: HEAD
   syncPolicy:
     automated: {}
+    syncOptions:     # Sync options which modifies sync behavior
+      - CreateNamespace=true
 {{- end }}
