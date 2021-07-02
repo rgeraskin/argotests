@@ -15,4 +15,6 @@ spec:
     path: guestbook
     repoURL: https://github.com/argoproj/argocd-example-apps
     targetRevision: HEAD
+  syncPolicy:
+    automated: {}
 {{- end }}
