@@ -12,4 +12,6 @@ spec:
     path: apps
     repoURL: https://github.com/rgeraskin/argotests
   syncPolicy:
-    automated: {}
+    automated:
+      selfHeal: true
+      prune: true
