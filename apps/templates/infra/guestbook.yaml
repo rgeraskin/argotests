@@ -9,7 +9,7 @@ metadata:
 spec:
   destination:
     namespace: guestbook
-    server: {{ $cluster }}
+    name: {{ $cluster }}
   project: default
   source:
     path: guestbook
